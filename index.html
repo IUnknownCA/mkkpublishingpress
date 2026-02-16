@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKK Publishing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #1a0f0a;
+    --bg-mid: #2a1810;
+    --text-cream: #e8dcc8;
+    --text-gold: #c9a84c;
+    --accent-red: #8b2500;
+    --accent-ember: #d4540a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    background: var(--bg-dark);
+    color: var(--text-cream);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(26, 15, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  nav .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--text-gold);
+  }
+  nav .links a {
+    color: var(--text-cream);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  nav .links a:hover { color: var(--text-gold); }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+  section:first-of-type { padding-top: 8rem; }
+
+  /* HOME / HERO */
+  .hero {
+    text-align: center;
+    padding: 10rem 2rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -50vw; right: -50vw; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(212, 84, 10, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--text-gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .hero .subtitle {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(232, 220, 200, 0.6);
+    margin-bottom: 3rem;
+  }
+  .hero .tagline {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-cream);
+    margin-bottom: 2rem;
+  }
+
+  /* BOOK FEATURE */
+  .book-feature {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .book-cover {
+    width: 300px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(212, 84, 10, 0.15);
+    border-radius: 2px;
+  }
+  .book-cover img { width: 100%; display: block; }
+  .book-info h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--text-gold);
+    margin-bottom: 0.5rem;
+  }
+  .book-info .author {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(232, 220, 200, 0.5);
+    margin-bottom: 1.5rem;
+  }
+  .book-info .blurb { margin-bottom: 2rem; font-size: 0.95rem; }
+  .book-info .blurb p { margin-bottom: 1rem; }
+  .book-info .blurb em { color: var(--text-cream); }
+  .book-info .blurb strong { color: var(--text-gold); font-weight: 700; }
+  .buy-btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background: var(--accent-red);
+    color: var(--text-cream);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
+  }
+  .buy-btn:hover {
+    background: var(--accent-ember);
+    border-color: var(--text-gold);
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    padding: 2rem 0;
+    color: rgba(201, 168, 76, 0.3);
+    letter-spacing: 1em;
+  }
+
+  /* PAGE HEADERS */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--text-gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .page-header .rule {
+    width: 60px;
+    height: 1px;
+    background: var(--text-gold);
+    margin: 1rem auto;
+    opacity: 0.4;
+  }
+
+  /* ABOUT */
+  .about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+  .about-content p { margin-bottom: 1.2rem; }
+
+  /* COMING SOON */
+  .coming-soon {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .coming-soon h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--text-gold);
+    margin-bottom: 0.5rem;
+  }
+  .coming-soon .series-tag {
+    font-style: italic;
+    color: rgba(232, 220, 200, 0.5);
+    margin-bottom: 1.5rem;
+  }
+  .coming-soon p { margin-bottom: 1rem; font-size: 0.95rem; }
+
+  /* CONTACT */
+  .contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-content p { margin-bottom: 1rem; font-size: 0.95rem; }
+  .contact-content a {
+    color: var(--text-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    transition: border-color 0.3s;
+  }
+  .contact-content a:hover { border-color: var(--text-gold); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    font-size: 0.8rem;
+    color: rgba(232, 220, 200, 0.35);
+    letter-spacing: 0.05em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .book-feature {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+    .book-cover { width: 220px; }
+    .hero h1 { font-size: 2.2rem; }
+    nav .links a { margin-left: 1.2rem; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MKK PUBLISHING</div>
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#books">Books</a>
+    <a href="#about">About</a>
+    <a href="#coming-soon">Coming Soon</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <h1>MKK Publishing</h1>
+  <p class="subtitle">Fiction that follows the evidence, even when the answer is uncomfortable.</p>
+</section>
+
+<!-- BOOKS -->
+<section id="books">
+  <div class="book-feature">
+    <div class="book-cover">
+      <div style="width:300px;box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(212, 84, 10, 0.15);">
+        <img src="cover_front_final.jpg" alt="The Devil's Own Luck by Mark Kennedy" style="width:100%;display:block;">
+      </div>
+    </div>
+    <div class="book-info">
+      <h2>The Devil's Own Luck</h2>
+      <p class="author">Mark Kennedy</p>
+      <div class="blurb">
+        <p><em>Luck is a quiet thing&mdash;until it leaves.</em></p>
+        <p>Alex Reeves sold his for ten thousand dollars. Now every bet he makes loses.</p>
+        <p>Ruby Yang refused to sell hers. Now someone wants it&mdash;and he'll do anything to get it.</p>
+        <p>Together they uncover a hidden exchange: objects that tilt probability, expose desire, and reshape choices&mdash;so long as their owners accept whatever comes due.</p>
+        <p><strong>They are not the only ones looking.</strong></p>
+        <p>One man gathers the pieces, patient and certain. Another watches from the edges, offering help. In the desert, certainty is more dangerous than chance.</p>
+      </div>
+      <a href="#" class="buy-btn">Available on Amazon</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&bull; &bull; &bull;</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="page-header">
+    <h2>About the Author</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="about-content">
+    <p>Mark Kennedy got his start writing video games for the Intellivision at Mattel Electronics, and has spent the last thirty-five years as a cybersecurity engineer at Symantec, where he is a Distinguished Engineer. Both careers taught him the same lesson: every system has rules, every rule has a cost, and somebody is always looking for the exploit.</p>
+    <p>His research in Victorian-era criminal history has produced published work challenging established theories on the Jack the Ripper case, and his fiction draws on the same instinct&mdash;following evidence wherever it leads, even when the answer is uncomfortable.</p>
+    <p>He lives in Las Vegas with his wife Chloe and a household of dogs and cats, three of whom are named Alex, Ruby, and Eric. He swears the names came first.</p>
+    <p><em>The Devil's Own Luck</em> is his debut novel.</p>
+  </div>
+</section>
+
+<div class="divider">&bull; &bull; &bull;</div>
+
+<!-- COMING SOON -->
+<section id="coming-soon">
+  <div class="page-header">
+    <h2>Coming Soon</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="coming-soon">
+    <h3>Operation Clean Slate</h3>
+    <p class="series-tag">A Hard Science Fiction Trilogy</p>
+    <p>When astronomers detect an interstellar object on a collision course with Earth, humanity faces an impossible deadline and an even more impossible question: is it natural or alien? And if the latter, who sent it and why?</p>
+    <p><strong style="color:var(--text-gold);">Book One: <em>Satan's Fist</em></strong></p>
+    <p style="color:rgba(232,220,200,0.5);margin-top:2rem;">Coming soon.</p>
+  </div>
+</section>
+
+<div class="divider">&bull; &bull; &bull;</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="page-header">
+    <h2>Contact</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="contact-content">
+    <p>For inquiries, rights, or just to say hello:</p>
+    <p><a href="mailto:mark@mkkpublishing.press">mark@mkkpublishing.press</a></p>
+    <p style="margin-top:2rem; color:rgba(232,220,200,0.5); font-size:0.85rem;">If you enjoyed <em>The Devil's Own Luck</em>, please consider leaving a review on Amazon. Reviews help independent authors reach new readers, and every one makes a difference.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 MKK Publishing &bull; mkkpublishing.press</p>
+</footer>
+
+</body>
+</html>
