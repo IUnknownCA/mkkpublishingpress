@@ -116,6 +116,12 @@
   .book-info .blurb p { margin-bottom: 1rem; }
   .book-info .blurb em { color: var(--text-cream); }
   .book-info .blurb strong { color: var(--text-gold); font-weight: 700; }
+  .book-info .series-tag {
+    font-style: italic;
+    color: rgba(232, 220, 200, 0.5);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
   .buy-btn {
     display: inline-block;
     padding: 0.8rem 2.5rem;
@@ -170,48 +176,6 @@
   }
   .about-content p { margin-bottom: 1.2rem; }
 
-  /* COMING SOON */
-  .coming-soon {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .coming-soon-feature {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .coming-soon-cover {
-    width: 250px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(50, 80, 140, 0.2);
-    border-radius: 2px;
-  }
-  .coming-soon-cover img { width: 100%; display: block; }
-  .coming-soon-info h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    color: var(--text-gold);
-    margin-bottom: 0.3rem;
-  }
-  .coming-soon-info .series-tag {
-    font-style: italic;
-    color: rgba(232, 220, 200, 0.5);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-  .coming-soon-info p { margin-bottom: 1rem; font-size: 0.95rem; }
-  .coming-soon-info .status {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-gold);
-  }
-
   /* CONTACT */
   .contact-content {
     max-width: 600px;
@@ -245,12 +209,6 @@
       text-align: center;
     }
     .book-cover { width: 220px; }
-    .coming-soon-feature {
-      grid-template-columns: 1fr;
-      justify-items: center;
-      text-align: center;
-    }
-    .coming-soon-cover { width: 200px; }
     .hero h1 { font-size: 2.2rem; }
     nav .links a { margin-left: 1.2rem; font-size: 0.75rem; }
   }
@@ -264,7 +222,6 @@
     <a href="#home">Home</a>
     <a href="#books">Books</a>
     <a href="#about">About</a>
-    <a href="#coming-soon">Coming Soon</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -277,6 +234,33 @@
 
 <!-- BOOKS -->
 <section id="books">
+  <div class="page-header">
+    <h2>Books</h2>
+    <div class="rule"></div>
+  </div>
+
+  <!-- Satan's Fist -->
+  <div class="book-feature">
+    <div class="book-cover">
+      <img src="satans_fist_cover.png" alt="Satan's Fist by Mark Kennedy &mdash; Book 1 of Operation Clean Slate">
+    </div>
+    <div class="book-info">
+      <h2>Satan&rsquo;s Fist</h2>
+      <p class="series-tag">Book 1 of Operation Clean Slate</p>
+      <p class="author">Mark Kennedy</p>
+      <div class="blurb">
+        <p><em>An interstellar object is hurtling toward Earth. It isn&rsquo;t natural.</em></p>
+        <p>When astronomers detect a massive kinetic impactor on a collision course with Earth, the math is undeniable: the impact will be an extinction-level event. Humanity has eighteen months to stop it&mdash;or cease to exist.</p>
+        <p>But stopping it requires something unprecedented. Earth and Mars&mdash;two civilizations separated by millions of miles and decades of distrust&mdash;must cooperate on a mission that pushes physics, engineering, and human endurance to their absolute limits.</p>
+        <p>The science is unforgiving. The distances are real. The margins for error don&rsquo;t exist.</p>
+      </div>
+      <a href="https://www.amazon.com/dp/B0GQQZT3HS/" class="buy-btn" target="_blank" rel="noopener">Buy on Amazon</a>
+    </div>
+  </div>
+
+  <div class="divider">&bull; &bull; &bull;</div>
+
+  <!-- The Devil's Own Luck -->
   <div class="book-feature">
     <div class="book-cover">
       <img src="cover_front_final.jpg" alt="The Devil's Own Luck by Mark Kennedy">
@@ -309,32 +293,7 @@
     <p>Mark Kennedy got his start writing video games for the Intellivision at Mattel Electronics, and has spent the last thirty-five years as a cybersecurity engineer at Symantec, where he is a Distinguished Engineer. Both careers taught him the same lesson: every system has rules, every rule has a cost, and somebody is always looking for the exploit.</p>
     <p>His research in Victorian-era criminal history has produced published work challenging established theories on the Jack the Ripper case, and his fiction draws on the same instinct&mdash;following evidence wherever it leads, even when the answer is uncomfortable.</p>
     <p>He lives in Las Vegas with his wife Chloe and a household of dogs and cats, three of whom are named Alex, Ruby, and Eric. He swears the names came first.</p>
-    <p><em>The Devil&rsquo;s Own Luck</em> is his debut novel.</p>
-  </div>
-</section>
-
-<div class="divider">&bull; &bull; &bull;</div>
-
-<!-- COMING SOON -->
-<section id="coming-soon">
-  <div class="page-header">
-    <h2>Coming Soon</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="coming-soon">
-    <div class="coming-soon-feature">
-      <div class="coming-soon-cover">
-        <img src="satans_fist_cover.png" alt="Satan's Fist by Mark Kennedy &mdash; Book 1 of Operation Clean Slate">
-      </div>
-      <div class="coming-soon-info">
-        <h3>Satan&rsquo;s Fist</h3>
-        <p class="series-tag">Book 1 of Operation Clean Slate &mdash; A Hard Science Fiction Trilogy</p>
-        <p>When astronomers detect an interstellar object on a collision course with Earth, humanity faces an impossible deadline and an even more impossible question: is it natural, or was it sent?</p>
-        <p>With years to impact and no margin for error, a global effort scrambles to deflect the object using nuclear weapons&mdash;while scientists, soldiers, and politicians fight over what it is, what it means, and whether the physics will even allow a solution.</p>
-        <p><em>Every orbital trajectory, every delta-v budget, every engagement scenario in this novel was computed and cross-verified across four independent AI systems. Where the physics bends, it bends deliberately. Everything else is real.</em></p>
-        <span class="status">Coming 2026</span>
-      </div>
-    </div>
+    <p><em>The Devil&rsquo;s Own Luck</em> is his debut novel. <em>Satan&rsquo;s Fist</em>, the first book in the Operation Clean Slate series, is his second.</p>
   </div>
 </section>
 
@@ -348,5 +307,14 @@
   </div>
   <div class="contact-content">
     <p>For inquiries, rights, or just to say hello:</p>
-    <p><a href="/cdn-cgi/l/email-protection#650804170e25080e0e151007090c160d0c0b024b1517001616"><span class="__cf_email__" data-cfemail="553834273e15383e3e252037393c263d3c3b327b2527302626">[email&#160;protected]</span></a></p>
-    <p style="margin-top:2rem; color:rgba(232,220,200,0.5); font-size:0.85rem;">If you&rsquo;ve read <em>The Devil&rsquo;s Own Luck</em> and enjoyed it, please leave a review on Amazon. If you read it and didn&rsquo;t enjoy it, please <em>tell no one.</em></p>
+    <p><a href="mailto:mark@mkkpublishing.com">mark@mkkpublishing.com</a></p>
+    <p style="margin-top:2rem; color:rgba(232,220,200,0.5); font-size:0.85rem;">If you&rsquo;ve read one of the books and enjoyed it, please leave a review on Amazon. If you read it and didn&rsquo;t enjoy it, please <em>tell no one.</em></p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 MKK Publishing. All rights reserved.
+</footer>
+
+</body>
+</html>
